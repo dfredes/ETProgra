@@ -1,0 +1,2 @@
+
+Key/APK/Firma ubicado en la carpeta android/app del proyecto

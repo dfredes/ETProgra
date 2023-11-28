@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Restablecer Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br>
+  <br>
+  <br>
+  <form [formGroup]="registroForm" (ngSubmit)="CambiarContrasena()">
+    <ion-item class="login-form" [class.invalid]="registroForm.get('nuevaContrasena')?.invalid && registroForm.get('nuevaContrasena')?.touched">
+      <ion-label position="stacked">Contraseña nueva</ion-label>
+      <ion-input type="password" placeholder="Ingrese su nueva contraseña" formControlName="nuevaContrasena" [(ngModel)]="nuevaContrasena"></ion-input>
+    </ion-item>
+    <div *ngIf="registroForm.get('nuevaContrasena')?.invalid && registroForm.get('nuevaContrasena')?.touched" class="login-form">
+      <ng-container *ngIf="registroForm.get('nuevaContrasena')?.hasError('required')">La contraseña es requerido.</ng-container>
+      <ng-container *ngIf="registroForm.get('nuevaContrasena')?.hasError('minlength')">La contraseña debe tener un minimo de 8 caracteres</ng-container>
+      <ng-container *ngIf="registroForm.get('nuevaContrasena')?.hasError('pattern')">La contrasena debe contener una mayuscula, minuscula, un numero y un caracter especial</ng-container>
+    </div>
+
+    <ion-item class="login-form" [class.invalid]="registroForm.get('nuevaContrasenaRepetida')?.invalid && registroForm.get('nuevaContrasenaRepetida')?.touched">
+      <ion-label position="stacked">Repita su contraseña</ion-label>
+      <ion-input type="password" placeholder="Ingrese su nueva contraseña nuevamente" formControlName="nuevaContrasenaRepetida"></ion-input>
+    </ion-item>
+
+    <br>
+    <br>
+    <br>
+    <div class="botones-contenedor">
+      <ion-button class="centrado-boton boton-ancho" shape="round" type="submit" (click)="CambiarContrasena()">Restablecer</ion-button><br>
+    </div>
+  </form>
+</ion-content>

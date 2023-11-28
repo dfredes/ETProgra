@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-row>
+        <ion-img class="ion-col-sm-2" src="assets/icon/logo-veloz.svg" alt="Logo" style="width:50px; padding-left: 10px;"></ion-img>
+        <ion-title class="ion-col-sm-10">
+          Veloz Car
+        </ion-title>
+      </ion-row>
+    </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+  <br>
+  <div class="botones-contenedor">
+    <ion-button shape="round" (click)="irPerfil()">Mi Perfil</ion-button>
+    <ion-button shape="round" (click)="crearViaje()" *ngIf="idRolRecibido == 2">Generar Viaje</ion-button>
+  </div>
+  <ion-card *ngFor="let bd of viajes">
+    <ion-card-header>
+      <ion-card-title>{{ bd.titulo | json}}</ion-card-title>
+      <ion-card-subtitle>Origen: {{ bd.origen | uppercase }}<br>Destino: {{ bd.destino | uppercase }}<br>Precio: {{ bd.precio | currency:'CLP':'symbol':'1.0-0' }}<br>Hora de salida: {{ bd.salida }}</ion-card-subtitle>
+      
+    </ion-card-header>  
+    <ion-card-content>
+      {{ bd.descripcion }}
+    </ion-card-content>
+    <div class="botones-contenedor">
+    <ion-button shape="round" (click)="irInterfazViaje(bd)">Unirse al Viaje</ion-button>
+    <ion-button shape="round" *ngIf="idRolRecibido == 2 && bd.Fk_idUsuario == idUsuarioRecibido" (click)="eliminarViaje(bd)">Eliminar Viaje</ion-button>
+    <ion-button shape="round" *ngIf="idRolRecibido == 2 && bd.Fk_idUsuario == idUsuarioRecibido" (click)="editarViaje(bd)">Modificar Viaje</ion-button>
+    </div>
+    <div class="botones-contenedor">
+      <mat-chip-listbox aria-label="Fish selection">
+        <mat-chip-option>Me interesa</mat-chip-option>
+      </mat-chip-listbox>
+    </div>
+  </ion-card>
+</ion-content>

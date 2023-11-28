@@ -1,0 +1,86 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+ion-button{
+  --border-radius: 8px;
+  width:100%;
+  max-width: 200px;
+  white-space: normal;
+  margin-bottom: 10px;
+}
+.botones-contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.interesa{
+  --border-radius: 8px;
+  width:100%;
+  max-width: 180px;
+  white-space: normal;
+  margin-bottom: 10px;
+}
+.mat-chip-option {
+  border-radius: 15px; /* Ajusta este valor según tus necesidades */
+  /* Otros estilos opcionales */
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}

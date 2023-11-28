@@ -1,0 +1,91 @@
+<ion-content [fullscreen]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registrar una cuenta</ion-title>
+  </ion-toolbar>
+
+  <form [formGroup]="registroForm" (ngSubmit)="guardarCambios()" class="ion-padding-top">
+    <ion-item class="login-form" [class.ion-invalid]="registroForm.get('usuario')?.invalid">
+      <ion-label position="stacked">Usuario</ion-label>
+      <ion-input
+        formControlName="usuario"
+        placeholder="Ingrese su usuario"
+        [(ngModel)]="usuario"
+      ></ion-input>
+      
+    </ion-item>
+    <ion-note *ngIf="registroForm.get('usuario')?.hasError('pattern')" class="login-form">Solo letras, números, -, _, y debe ser único.</ion-note>
+
+    <ion-item class="login-form" [class.ion-invalid]="registroForm.get('nombre')?.invalid">
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input
+        formControlName="nombre"
+        placeholder="Ingrese su Nombre"
+        [(ngModel)]="nombre"
+      ></ion-input>      
+    </ion-item>
+    <ion-note *ngIf="registroForm.get('nombre')?.hasError('pattern')" class="login-form">Solo letras son permitidas.</ion-note>
+
+    <ion-item class="login-form" [class.ion-invalid]="registroForm.get('apellido')?.invalid">
+      <ion-label position="stacked">Apellido</ion-label>
+      <ion-input
+        formControlName="apellido"
+        placeholder="Ingrese su Apellido"
+        [(ngModel)]="apellido"
+      ></ion-input>      
+    </ion-item>
+    <ion-note *ngIf="registroForm.get('apellido')?.hasError('pattern')" class="login-form">Solo letras son permitidas.</ion-note>
+
+    <ion-item class="login-form" [class.ion-invalid]="registroForm.get('telefono')?.invalid">
+      <ion-label position="stacked">Telefono</ion-label>
+      <ion-input
+        formControlName="telefono"
+        placeholder="Ingrese su número de teléfono 569XXXXXXXX"
+        [(ngModel)]="telefono"
+      ></ion-input>    
+    </ion-item>
+    <ion-note *ngIf="registroForm.get('telefono')?.hasError('pattern') && registroForm.get('telefono')?.touched" class="login-form">El teléfono debe contener solo números y tener exactamente 11 dígitos.</ion-note>
+
+    <ion-item class="login-form" [class.ion-invalid]="registroForm.get('email')?.invalid">
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input
+        formControlName="email"
+        placeholder="Ingrese su correo electrónico"
+        [(ngModel)]="email"
+      ></ion-input>      
+    </ion-item>
+    <ion-note *ngIf="registroForm.get('email')?.hasError('pattern') && registroForm.get('email')?.touched" class="login-form">Por favor, ingrese una dirección de correo electrónico válida.</ion-note>
+
+    <ion-item class="login-form" [class.ion-invalid]="registroForm.get('contrasena')?.invalid">
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input
+        formControlName="contrasena"
+        placeholder="Ingrese su contraseña"
+        type="password"
+        [(ngModel)]="contrasena"
+      ></ion-input>      
+    </ion-item>
+    <ion-note *ngIf="registroForm.get('contrasena')?.hasError('pattern') && registroForm.get('contrasena')?.touched" class="login-form">La contraseña debe tener al menos 8 caracteres y contener al menos una letra mayúscula, una letra minúscula, un número y un carácter especial.</ion-note>
+
+    <ion-item class="login-form" [class.ion-invalid]="registroForm.get('contrasenaRepetida')?.invalid">
+      <ion-label position="stacked">Contraseña nuevamente</ion-label>
+      <ion-input
+        formControlName="contrasenaRepetida"
+        placeholder="Ingrese nuevamente su contraseña"
+        type="password"
+      ></ion-input>
+      <!-- Validación en tiempo real para mostrar el mensaje -->      
+    </ion-item>
+    <ion-note color="danger" *ngIf="registroForm.get('contrasenaRepetida')?.hasError('required') && registroForm.get('contrasenaRepetida')?.touched" class="login-form">Este campo es obligatorio.</ion-note>
+      <ion-note *ngIf="registroForm.hasError('passwordMismatch')" class="login-form">Las contraseñas no coinciden.</ion-note>
+
+    <br>
+    <div class="botones-contenedor ion-padding-top">
+      <ion-button class="centrado-boton boton-ancho" shape="round" type="submit" (click)="guardarCambios">Crear Cuenta</ion-button><br>
+      <h3>¿Ya tienes una cuenta?</h3>
+      <ion-button class="centrado-boton boton-ancho" shape="round" (click)="login()">Ingresa</ion-button>
+    </div>
+  </form>
+</ion-content>

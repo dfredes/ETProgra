@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Viaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngFor="let z of viaje">
+  <ion-card *ngFor="let x of usuario">
+    <div class="user-info" *ngFor="let y of auto">
+      <div class="avatar-container">
+        <ion-avatar class="center-avatar">
+          <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="Silhouette of a person's head">
+        </ion-avatar>
+      </div>
+      <h2 class="ion-text-center">{{ x.nombre }} {{ x.apellido}}</h2>
+      <p class="ion-text-center">Patente Vehiculo: {{ y.patente }}</p>
+      <p class="ion-text-center">Asientos Disponibles: {{ y.asientos }}</p>
+      <p class="ion-text-center">Precio Viaje: {{ z.precio }}</p>
+    </div>
+  </ion-card>
+
+  <ion-card>
+    <img src="https://mitsubishi-motors.cl/wp-content/uploads/2022/05/OUT22_Azul-Perla-D14_1200x550_6.png" alt="Silhouette of mountains">
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <h2>Descripción Viaje</h2>
+      <p class="ion-text-wrap">{{ z.descripcion }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-label>Pasajeros en el viaje</ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>Conductor</ion-item>
+        <ion-item>Pasajero 1</ion-item>
+        <ion-item>Pasajero 2</ion-item>
+        <ion-item>Pasajero 3</ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" (click)="presentAlert()">Unirse al Viaje</ion-button>
+  <br>
+  <ion-button  expand="full"(click)="cancelar()">Cancelar</ion-button>
+</ion-content>

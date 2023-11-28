@@ -1,0 +1,74 @@
+.user-card {
+    background-color: #fff !important; /* Forzar el fondo blanco */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  ion-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  ion-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  ion-item {
+    border: none;
+    text-align: center;
+    --ion-background-color:#fff;/* Cambia el fondo a transparente */
+  }
+  p{
+    font-weight: 500;
+  }
+  ion-label {
+    text-align: left;
+    background-color: transparent; /* Cambia el fondo a transparente */
+  }
+  
+  ion-card-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  ion-card-content p {
+    text-align: left;
+  }
+  
+  ion-button {
+    --border-radius: 6px;
+    margin-top: 10px;
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  img {
+    width: 70%;
+  }
+  
+  ion-col {
+    padding: 0;
+    margin: 0;
+    background-color: transparent; /* Cambia el fondo a transparente */
+  }
+
+  .boton-ancho {
+    width: 100%;
+    max-width: 200px; /* Puedes ajustar este valor según tus necesidades */
+    white-space: normal;
+    margin-bottom: 10px;
+    --border-radius: 8px;
+  }
+  
+  ion-grid {
+    background-color: transparent; /* Cambia el fondo a transparente */
+  }
+  

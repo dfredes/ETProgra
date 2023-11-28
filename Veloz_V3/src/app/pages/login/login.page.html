@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inicio de Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-text-center"> 
+  <div class="imagen-centrada">
+    <ion-img src="assets/icon/logo-veloz.svg" alt="Logo" style="width: 100px; filter: drop-shadow(0px 4px 8px rgb(23, 143, 127));"></ion-img>
+  </div>
+  <h1 class="v">VELOZ</h1>
+  <h1 class="centrado">Bienvenido</h1>
+  <p class="centrado">Inicio de Sesión</p>
+  <br><br>
+  
+  <br>
+  <br>
+  <form [formGroup]="loginForm" (ngSubmit)="ingresar()">
+    <ion-item [class.invalid]="loginForm.get('usuario')?.invalid && loginForm.get('usuario')?.touched" class="login-form">
+      <ion-label position="stacked">Usuario</ion-label>
+      <ion-input placeholder="Ingrese su usuario" formControlName="usuario"></ion-input>
+    </ion-item>
+    <div *ngIf="loginForm.get('usuario')?.invalid && loginForm.get('usuario')?.touched" class="error-message login-form">
+      <ng-container *ngIf="loginForm.get('usuario')?.hasError('required')">Usuario es requerido.</ng-container>
+    </div>
+
+    <ion-item [class.invalid]="loginForm.get('contrasena')?.invalid && loginForm.get('contrasena')?.touched" class="login-form">
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input placeholder="Ingrese su contraseña" type="password" formControlName="contrasena"></ion-input>
+    </ion-item>
+    <div *ngIf="loginForm.get('contrasena')?.invalid && loginForm.get('contrasena')?.touched" class="error-message login-form">
+      <ng-container *ngIf="loginForm.get('contrasena')?.hasError('required')">Contraseña es requerida.</ng-container>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <div class="botones-contenedor">
+      <ion-button class="centrado-boton boton-ancho" shape="round" type="submit" [disabled]="!loginForm.valid">Ingresar</ion-button>
+    </div>
+    
+    <div class="botones-contenedor">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-button class="boton-cuadrado centrado-boton" shape="round" (click)="registroCliente()">Registrarse</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </form>
+</ion-content>

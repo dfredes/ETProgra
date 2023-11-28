@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Generar Viaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-item class="login-form">
+    <ion-label position="stacked">Titulo</ion-label>
+    <ion-input placeholder="Ingrese un titulo para el viaje" [formControl]="tituloControl" [(ngModel)]="titulo"></ion-input>
+  </ion-item>
+  <ion-text *ngIf="tituloControl.invalid && tituloControl.touched" class="login-form">
+    Campo requerido y solo se permiten letras y números.
+  </ion-text>
+  
+  <ion-item class="login-form">
+    <ion-label position="stacked">Origen</ion-label>
+    <ion-input placeholder="Ingrese donde inicia el viaje" [formControl]="origenControl" [(ngModel)]="origen"></ion-input>
+  </ion-item>
+  <ion-text *ngIf="origenControl.invalid && origenControl.touched" class="login-form">
+    Campo requerido y solo se permiten letras y números.
+  </ion-text>
+
+  <ion-item class="login-form">
+    <ion-label position="stacked">Destino</ion-label>
+    <ion-input placeholder="Ingrese donde termina el viaje" [formControl]="destinoControl" [(ngModel)]="destino"></ion-input>
+  </ion-item>
+  <ion-text *ngIf="destinoControl.invalid && destinoControl.touched" class="login-form">
+    Campo requerido y solo se permiten letras y números.
+  </ion-text>
+
+  <ion-item class="login-form">
+    <ion-label position="stacked">Precio</ion-label>
+    <ion-input placeholder="Ingrese un precio por el viaje" [formControl]="precioControl" [(ngModel)]="precio"></ion-input>
+  </ion-item>
+  <ion-text *ngIf="precioControl.invalid && precioControl.touched" class="login-form">
+    Campo requerido y solo se permiten números.
+  </ion-text>
+
+  <ion-item class="login-form">
+    <ion-label position="stacked">Hora de Salida</ion-label>
+    <ion-input placeholder="Ingrese la hora de inicio del viaje" [formControl]="horaSalidaControl" [(ngModel)]="salida"></ion-input>
+  </ion-item>
+  <ion-text *ngIf="horaSalidaControl.invalid && horaSalidaControl.touched" class="login-form">
+    Campo requerido y solo se permiten números y ':'.
+  </ion-text>
+
+  <ion-item class="login-form">
+    <ion-label position="stacked">Descripción</ion-label>
+    <ion-input placeholder="Ingrese una descripción del viaje" [formControl]="descripcionControl" [(ngModel)]="descripcion"></ion-input>
+  </ion-item>
+  <ion-text *ngIf="descripcionControl.invalid && descripcionControl.touched" class="login-form">
+    Campo requerido y solo se permiten letras y números.
+  </ion-text>
+
+  <br>
+  <div class="botones-contenedor">
+    <ion-button class="centrado-boton boton-ancho" shape="round" (click)="CrearViaje()">Generar Viaje</ion-button><br>
+    <ion-button class="centrado-boton boton-ancho" shape="round" (click)="cancelar()">Cancelar</ion-button>
+  </div>
+</ion-content>

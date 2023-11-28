@@ -1,0 +1,83 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import '@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+ion-app{
+    --ion-background-color:#eeeeee;
+    --ion-text-color:#525252;
+}
+ion-toolbar{
+    --ion-background-color:#159c9e;
+    --ion-text-color:#fff;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+ion-title{
+    --ion-text-color:#fff;
+}
+
+ion-button {
+    --background: #35b7a1 !important;
+    --background-hover: #9ce0be !important;
+    --background-activated: #88f4be !important;
+    --background-focused: #88f4be !important;
+  
+    --color: #ffffff !important;
+  
+    --box-shadow: 0 2px 6px 0 rgb(10, 78, 69);
+  
+    --ripple-color: deeppink;
+  
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+  }
+  .login-form {
+    display: flex;
+    flex-direction: column; /* Alinear verticalmente el contenido en columnas */
+    align-items: center; /* Centrar verticalmente */
+    width: 100%; /* Cambia este valor según tus necesidades */
+    max-width: 300px; /* Opcional: Establece un ancho máximo para el div */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+hr{
+    display: flex;
+    flex-direction: column; /* Alinear verticalmente el contenido en columnas */
+    align-items: center; /* Centrar verticalmente */
+    width: 100%; /* Cambia este valor según tus necesidades */
+    max-width: 300px; /* Opcional: Establece un ancho máximo para el div */
+    margin: 0 auto; /* Centrar horizontalmente */
+    border-top: 1px solid #1aadaf; 
+}
+ion-card{    
+    --background: #fff !important;
+}
+.ion-no-border{    
+    border: none;
+}
+.no-border {
+    --inner-border-width: 0px; /* Establece el ancho del borde interno a 0 */
+    --inner-border-color: transparent; /* Establece el color del borde interno a transparente */
+  }

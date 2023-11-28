@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Modificar Automóvil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <br>
+  <ion-item class="login-form" [class.invalid]="patenteTouched && !isPatenteValid()">
+    <ion-label position="stacked">Patente</ion-label>
+    <ion-input
+      placeholder="Ingrese la patente del vehículo"
+      [(ngModel)]="patente"
+      (input)="validatePatente()"
+    ></ion-input>
+  </ion-item>
+  <ion-note *ngIf="patenteTouched && !isPatenteValid()" class="error-message login-form">
+    La patente debe contener 4 letras seguidas de 2 números. Ejemplo: ABCD12
+  </ion-note>
+
+  <ion-item class="login-form" [class.invalid]="marcaTouched && !isMarcaValid()">
+    <ion-label position="stacked">Marca</ion-label>
+    <ion-input
+      placeholder="Ingrese la Marca del vehículo"
+      [(ngModel)]="marca"
+      (input)="validateMarca()"
+    ></ion-input>
+  </ion-item>
+  <ion-note *ngIf="marcaTouched && !isMarcaValid()" class="error-message login-form">
+    La marca solo debe contener letras y espacios.
+  </ion-note>
+  
+  <ion-note *ngIf="marcaTouched && !isMarcaValid()" class="error-message login-form">
+    La marca solo debe contener letras y espacios.
+  </ion-note>
+
+  <ion-item class="login-form" [class.invalid]="asientosTouched && !isAsientosValid()">
+    <ion-label position="stacked">Asientos</ion-label>
+    <ion-input
+      placeholder="Ingrese el número de asientos del vehículo"
+      [(ngModel)]="asientos"
+      (input)="validateAsientos()"
+    ></ion-input>
+  </ion-item>
+  <ion-note *ngIf="asientosTouched && !isAsientosValid()" class="error-message login-form">
+    Ingrese un número válido de asientos (entre 4 y 8).
+  </ion-note>
+
+  <br>
+  <div class="botones-contenedor">
+    <ion-button class="centrado-boton boton-ancho" shape="round" (click)="actualizarDatos()">Actualizar Datos</ion-button><br>
+    <ion-button class="centrado-boton boton-ancho" shape="round" (click)="cancelar()">Cancelar</ion-button>
+  </div>
+</ion-content>

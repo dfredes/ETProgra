@@ -1,0 +1,25 @@
+<ion-app>
+  <ion-menu-toggle auto-hide="false">
+  <ion-menu contentId="menu-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu Principal</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-item [routerLink]="'/home'">
+        <ion-icon name="car-outline"></ion-icon>Menu Principal
+      </ion-item>
+      <ion-item [routerLink]="'/restablecer-contrasena'">
+        <ion-icon name="lock-open-outline"></ion-icon>Cambiar contraseña
+      </ion-item>
+      <ion-item [routerLink]="'/'">
+        <ion-icon name="exit-outline"></ion-icon>Cerrar Sesion
+      </ion-item>
+
+    </ion-content>
+  </ion-menu>
+  </ion-menu-toggle>
+  <ion-router-outlet id="menu-content"></ion-router-outlet>
+</ion-app>

@@ -1,0 +1,48 @@
+.centrado{
+    text-align: center;
+    margin: auto;
+}
+
+.centrado-boton{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    --border-radius: 8px;
+
+}
+.botones-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .boton-ancho {
+    width: 100%;
+    max-width: 170px; 
+    white-space: normal;
+    margin-bottom: 10px;
+  }
+
+  .imagen-centrada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; /* Ajusta el margen superior e inferior según sea necesario */
+  }
+  .v{
+    color:#1DD9DD;
+    text-shadow: 1px 1px 3px rgb(10, 78, 69);
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+  .botones-contenedor {
+    text-align: center;
+  }
+  
+  .boton-cuadrado {
+    width: 90%;
+    margin: 0 auto 10px; /* Agrega un margen inferior de 10px para separar los botones */
+  }
+  
+  
